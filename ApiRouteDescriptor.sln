@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRouteDescriptor", "ApiRouteDescriptor\ApiRouteDescriptor.csproj", "{D1179467-EA79-4187-9DEF-B32E8F38150D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRouteDescriptorSample", "ApiRouteDescriptorSample\ApiRouteDescriptorSample.csproj", "{90B9C673-1079-4AB1-A701-6BACCC23CCAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRouteDescriptor.EntityFrameworkCore", "ApiRouteDescriptor.EntityFrameworkCore\ApiRouteDescriptor.EntityFrameworkCore.csproj", "{E882E972-5549-4953-B675-2B582911C99F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1179467-EA79-4187-9DEF-B32E8F38150D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1179467-EA79-4187-9DEF-B32E8F38150D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1179467-EA79-4187-9DEF-B32E8F38150D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1179467-EA79-4187-9DEF-B32E8F38150D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90B9C673-1079-4AB1-A701-6BACCC23CCAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B9C673-1079-4AB1-A701-6BACCC23CCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B9C673-1079-4AB1-A701-6BACCC23CCAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B9C673-1079-4AB1-A701-6BACCC23CCAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E882E972-5549-4953-B675-2B582911C99F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E882E972-5549-4953-B675-2B582911C99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E882E972-5549-4953-B675-2B582911C99F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E882E972-5549-4953-B675-2B582911C99F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
