@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ApiRouteDescriptor.Resources
 {
-    public class ResourceCollection<TResource>
+    public class ResourceCollection<TResource> : Resource where TResource: Resource
     {
         public int TotalResults { get; set; }
         public int ItemsPerPage { get; set; }

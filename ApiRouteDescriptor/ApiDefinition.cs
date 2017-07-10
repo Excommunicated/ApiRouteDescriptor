@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using ApiRouteDescriptor.Descriptors;
+using ApiRouteDescriptor.Resources;
 using ApiRouteDescriptor.Responders;
 
 namespace ApiRouteDescriptor
@@ -45,9 +48,15 @@ namespace ApiRouteDescriptor
             return new CustomActionResponseDescriptor<TResponder>(null);
         }
 
-        protected PagedResponseDescriptor<TModel, TResource> Paged<TModel,TResource>(string orderBy, bool orderDesc = false) where TModel: class 
+        protected PagedResponseDescriptor<TModel, TResource> Paged<TModel,TResource>(string orderBy, bool orderDesc = false) where TModel: class where TResource: Resource
         {
             return new PagedResponseDescriptor<TModel, TResource>(orderBy, orderDesc);
         }
+
+        protected SingleResponseDescriptor<TModel, TResource,TId> Single<TModel, TResource, TId>() where TModel: class, IHaveId<TId> where TResource: Resource
+        {
+            return new SingleResponseDescriptor<TModel, TResource, TId>();
+        }
+
     }
 }

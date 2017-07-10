@@ -23,6 +23,11 @@ namespace ApiRouteDescriptor.EntityFrameworkCore
             return _context.Set<TDocument>();
         }
 
+        public TDocument Load<TDocument, TId>(TId id) where TDocument : class, IHaveId<TId>
+        {
+            return _context.Set<TDocument>().Find(id);
+        }
+
         public void Commit()
         {
             _context.SaveChanges();

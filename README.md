@@ -33,4 +33,4 @@ app.UseApiRouteDescriptor(new SampleApiDefinition());
 - Add more Describers. For other methods like POST, PUT, DELETE etc.
 - Create a Model Mapper that allows customization of the resources in a fluent fashion.
 - Add in other ideas like Authorization, Error handling
-- Anyhting else that comes to mind.
+- Anything else that comes to mind.

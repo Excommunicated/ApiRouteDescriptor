@@ -1,4 +1,5 @@
 using ApiRouteDescriptor.Descriptors;
+using ApiRouteDescriptor.Resources;
 
 namespace ApiRouteDescriptor.Responders
 {

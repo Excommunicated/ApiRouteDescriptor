@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ApiRouteDescriptor.Extensions;
+using ApiRouteDescriptor.Resources;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 
 namespace ApiRouteDescriptor.Responders
 {
@@ -12,13 +15,14 @@ namespace ApiRouteDescriptor.Responders
         protected HttpContext Context { get; private set; }
         protected TDescriptor Options { get; private set; }
 
-        protected abstract Task Execute();
+        protected abstract Task<Resource> Execute();
 
-        public Task Respond(TDescriptor options, HttpContext context)
+        public async Task Respond(TDescriptor options, HttpContext context)
         {
             this.Context = context;
             this.Options = options;
-            return this.Execute();
+            var response = await this.Execute();
+            await this.Context.Response.WriteAsJsonAsync(response);
         }
 
         protected TValue QueryString<TValue>(string queryValue, TValue defaultValue)
@@ -30,6 +34,18 @@ namespace ApiRouteDescriptor.Responders
                 if (string.IsNullOrWhiteSpace(a)) return s;
                 return $"{a},{s}";
             }), typeof(TValue));
+        }
+
+        protected string ResolveLink(string routeName)
+        {
+            return this.ResolveLink(routeName, new RouteValueDictionary());
+        }
+
+        protected string ResolveLink(string routeName, RouteValueDictionary rvd)
+        {
+            var routeData = this.Context.GetRouteData();
+            var router = routeData.Routers[0];
+            return router.GetVirtualPath(new VirtualPathContext(this.Context, routeData.Values, rvd, routeName))?.VirtualPath;
         }
     }
 }
